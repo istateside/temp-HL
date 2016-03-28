@@ -12,7 +12,7 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'source-map',
       }
@@ -24,16 +24,11 @@ module.exports = {
         loader: "style-loader!css-loader!postcss-loader!"
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loaders: [
-          'react-hot',
           'babel?presets[]=react,presets[]=es2015'
         ],
-      },
-      {
-        test: /\.html$/,
-        loader: "file?name=[name].[ext]",
       },
     ],
   },
