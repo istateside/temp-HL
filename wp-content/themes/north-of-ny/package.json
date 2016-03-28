@@ -1,0 +1,25 @@
+{
+  "name": "north-of-ny",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entry.js",
+  "dependencies": {
+    "autoprefixer": "^6.3.5",
+    "babel": "^6.5.2",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "postcss-import": "^8.0.2",
+    "postcss-loader": "^0.8.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.2.0",
+    "source-map": "^0.5.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
