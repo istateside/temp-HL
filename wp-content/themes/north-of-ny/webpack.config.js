@@ -1,9 +1,6 @@
 require("babel-polyfill");
 var path = require('path');
 var autoprefixer = require('autoprefixer');
-var variables    = require('postcss-simple-vars');
-var nested       = require('postcss-nested');
-var importer     = require('postcss-import');
 
 module.exports = {
   entry: [
@@ -27,9 +24,9 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.css$/,
-        include: /src\/css/,
-        loader: "style-loader!css-loader!postcss-loader!"
+        test: /\.scss$/,
+        include: /src\/scss/,
+        loader: "style!css?sourceMap!postcss!sass?sourceMap!"
       },
       {
         test: /\.js$/,
@@ -42,14 +39,11 @@ module.exports = {
   },
   postcss: function(webpack) {
     return [
-      autoprefixer({ browsers: ["last 2 versions"]}),
-      nested,
-      variables,
-      importer({addDependencyTo: webpack})
+      autoprefixer({ browsers: ["last 2 versions"]})
     ];
   },
   resolve: {
-    extensions: ['', '.js', '.css'],
+    extensions: ['', '.js', '.css', '.scss'],
     modulesDirectories: ['src', 'node_modules'],
   }
 }

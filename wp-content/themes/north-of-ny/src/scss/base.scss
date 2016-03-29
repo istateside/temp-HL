@@ -1,0 +1,34 @@
+@import '_variables';
+@import 'reset';
+@import 'header';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+  transition: color .3s;
+  
+  &:hover {
+    cursor: pointer;
+    color: #000;
+  }
+}
+
+.-min-size-tablet {
+  @media screen and (max-width: $tabletLandscape) {
+    display: none;
+  }
+}
+
+.-max-size-tablet {
+  @media screen and (min-width: $tabletLandscape + 1) {
+    display: none;
+  }
+}
