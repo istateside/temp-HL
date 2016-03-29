@@ -1,19 +1,27 @@
+require("babel-polyfill");
+var path = require('path');
 var autoprefixer = require('autoprefixer');
 var variables    = require('postcss-simple-vars');
 var nested       = require('postcss-nested');
 var importer     = require('postcss-import');
 
 module.exports = {
-  entry: './src/entry.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/dev-server',
+    './src/entry.js',
+  ],
   output: {
-    publicPath: '/build',
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist'),
+    filename: 'dist/application.js',
+    publicPath: '/',
   },
+  devTool: 'eval',
   module: {
     preLoaders: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: 'source-map',
       }
     ],
@@ -25,9 +33,9 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loaders: [
-          'babel?presets[]=react,presets[]=es2015'
+          'babel?presets[]=es2015,presets[]=stage-0'
         ],
       },
     ],
@@ -37,7 +45,8 @@ module.exports = {
       autoprefixer({ browsers: ["last 2 versions"]}),
       nested,
       variables,
-      importer({addDependencyTo: webpack})];
+      importer({addDependencyTo: webpack})
+    ];
   },
   resolve: {
     extensions: ['', '.js', '.css'],

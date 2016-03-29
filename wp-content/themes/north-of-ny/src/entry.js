@@ -1,1 +1,1 @@
-/** Main entry file for project */
+import 'css/test';
