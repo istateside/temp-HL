@@ -1,0 +1,1 @@
+<p><?php echo get_field('quote_content') ?></p>

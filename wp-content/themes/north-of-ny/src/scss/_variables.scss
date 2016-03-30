@@ -2,8 +2,10 @@
 $green: #00534d;
 $gray: #666;
 $white: #fff;
+$black: #000;
 $borderGray: #dedede;
 $overlayBg: #f4f1ee;
+$blue: #9faeb6;
 
 /* BREAKPOINTS */
 $mobilePortrait: 480px;
@@ -14,3 +16,9 @@ $desktop: 1200px;
 
 /* Z-INDICES */
 $overlayZ: 500;
+$headerZ: 100;
+
+/* FONTS */
+$verlag: "Verlag";
+$verlagBlack: "VerlagBlack";
+$chronicle: "Chronicle";

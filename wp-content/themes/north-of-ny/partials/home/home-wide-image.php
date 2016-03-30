@@ -1,0 +1,1 @@
+<img src="<?php echo get_field('full_width_image') ?>"/>

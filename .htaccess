@@ -1,0 +1,4 @@
+<IfModule mod_php5.c>
+php_value post_max_size           20M
+php_value upload_max_filesize     40M
+</IfModule>

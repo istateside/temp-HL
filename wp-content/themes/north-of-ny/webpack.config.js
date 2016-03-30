@@ -35,6 +35,10 @@ module.exports = {
           'babel?presets[]=es2015,presets[]=stage-0'
         ],
       },
+      {
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
+        loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+      },
     ],
   },
   postcss: function(webpack) {

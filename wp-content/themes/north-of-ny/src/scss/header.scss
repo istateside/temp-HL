@@ -1,4 +1,6 @@
 .header {
+  z-index: $headerZ;
+  background: $white;
   &--main {
     position: fixed;
     top: 0;
@@ -8,13 +10,19 @@
   }
   
   &__nav {
+    font-family: $verlag;
+    font-weight: bold;
     font-size: 12px;
-    position: absolute;
     line-height: 66px;
     
+    &--left,
+    &--right {
+      position: absolute;
+      top: 0;
+    }
+    
     &--center {
-      left: 170px;
-      right: 120px;
+      margin: 0 auto;
       text-align: center;
     }
     
@@ -39,7 +47,6 @@
     &--horizontal {
       .nav__li {
         display: inline-block;
-
       }
     }
   }
@@ -73,13 +80,16 @@
   }
   
   &__link {
-    display: block;
     line-height: inherit;
     margin: auto;    
   }
 }
 
 @media (max-width: $tabletLandscape) {
+  .header {
+    z-index: $headerZ;
+  }
+  
   .hamburger {
     background: $white;
     position: absolute;
@@ -89,23 +99,53 @@
     padding: 20px;
     z-index: $overlayZ + 15;
     
-    &__line {
+    &__inner {
       display: block;
-      position: absolute;
-      background: $green;
-      width: 25px;
-      height: 2px;
-      
-      &-1 {
-        top: 21px;
+      top: 50%;
+
+      &,
+      &::before,
+      &::after {
+        width: 25px;
+        height: 2px;
+        background-color: $gray;
+        border-radius: 0px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+      }
+
+      &::before {
+        top: -9px;
+      }
+
+      &::after {
+        bottom: -9px;
       }
       
-      &-2 {
-        top: 29px;
-      }
       
-      &-3 {
-        top:37px;
+      
+      
+      &:before,
+      &:after {
+        content: "";
+      }
+
+      &::before {
+        transition: top 0.1s 0.14s ease,
+                    opacity 0.1s ease;
+      }
+
+      &::after {
+        transition: bottom 0.1s 0.14s ease,
+                    transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
       }
     }
   }
@@ -176,10 +216,107 @@
       .mobile-nav {
         left: 0;
       }
+      
+      .hamburger {
+        &__inner {
+          transform: rotate(45deg);
+          transition-delay: 0.14s;
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          &:before {
+            top: 0;
+            opacity: 0;
+            transition: top 0.1s ease,
+                        opacity 0.1s 0.14s ease;
+          }
+
+          &:after {
+            bottom: 0;
+            transform: rotate(-90deg);
+            transition: bottom 0.1s ease,
+                        transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+      }
     }
   }
   
   .nav__li:after {
     content: none;
+  }
+}
+
+/* GET IN TOUCH */
+.contact {
+  background: $white;
+  transition: right .3s ease-in-out;
+  border: 4px solid $blue;
+  color: $green;
+  padding: 25px;
+  position: fixed;
+  right: -300px;
+  text-align: center;
+  top: 150px;
+  width: 300px;
+  z-index: $headerZ - 10;
+  
+  &.-is-visible {
+    right: 0;
+  }
+  
+  &__button {
+    background: $blue;
+    color: $white;
+    font: bold 12px $verlag;
+    height: 40px;
+    left: -164px;
+    line-height: 12px;
+    padding: 14px;
+    position: absolute;
+    text-transform: uppercase;
+    top: -4px;
+    transform-origin: top right;
+    transform: rotate(-90deg);
+    width: 120px;
+  }
+  
+  &__h3 {
+    font: bold 13px $verlag;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin: 15px auto;
+  }
+  
+  &__p {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 15px auto;
+  }
+  
+  &__cta {
+    color: $gray;
+    font: italic 15px $chronicle;
+    margin: 10px auto;
+  }
+  
+  @media (max-width: $mobileLandscape) {
+    transition: top .3s ease-in-out;
+    position: fixed;
+    width: 100%;
+    right: auto;
+    left: 0;
+    top: -200px;
+    
+    &.-is-visible {
+      top: 100px;
+    }
+    
+    &__button {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      transform: none;
+      top: 64px;
+    }
   }
 }

@@ -1,0 +1,52 @@
+.home__block {
+  display: block;
+  width: 100%;
+}
+
+.video-wrapper {
+  position: relative;
+}
+
+.video {
+  width: 100%;
+  display: block;
+  
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -280px;
+    margin-top: -74px;
+    color: $white;
+    text-align: center;
+  }
+  
+  &__h3 {
+    font: 30px $chronicle;
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+}
+
+.main-title {
+  font: 60px $verlag;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  color: $white;
+  text-transform: uppercase;
+  width: 560px;
+  text-align: center;
+  
+  &__span {
+    font-family: $chronicle;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.1em;
+  }
+}
+
+.home__block img {
+  display: block;
+  width: 100%;
+}

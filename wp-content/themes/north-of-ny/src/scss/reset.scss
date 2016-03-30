@@ -46,3 +46,16 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+button {
+  outline: 0;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}

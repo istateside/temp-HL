@@ -12,25 +12,23 @@
 
   </head>
   <body>
-    <header class="header header--main" id='main-header'>
-      <div class='header__hamburger hamburger js-header-toggle -max-size-tablet'>
-        <span class="hamburger__line hamburger__line-1"></span>
-        <span class="hamburger__line hamburger__line-2"></span>
-        <span class="hamburger__line hamburger__line-3"></span>                
-      </div>
+    <?php $headerClass = is_front_page() || is_home() ? 'header--home' : NULL; ?>
+    <header class="header header--main js-header <?php echo $headerClass ?>" id='main-header'>
+      <button class='header__hamburger hamburger js-header-toggle -max-size-tablet' type='button' aria-label='Menu' aria-controls='navigation'>
+        <span class='hamburger__inner'></span>
+      </button>
       <div class="header__inner-wrap">
         <div class='header__nav header__nav--left header__nav--logo'>
           <a href="/">NORTH OF NY</a>
         </div>
         
         <nav class='header__nav header__nav--center header__nav--main mobile-nav'>
-          <!-- <a href="#" class="js-header-toggle header__close"></a> -->
           <ul class="nav__list nav__list--horizontal">
             <li class="nav__li">
               <a class="nav__link">The Equestrian</a>
             </li>
             <li class="nav__li">
-              <a class="nav__link">The Villager</a>
+              <a href="/villagers/the-villager" class="nav__link">The Villager</a>
             </li>
             <li class="nav__li">
               <a class="nav__link">The Trailblazer</a>
@@ -57,3 +55,5 @@
       </div>
       <div class="header__underlay -max-size-tablet js-header-toggle"></div>
     </header>
+    
+    <?php get_template_part('partial', 'contact'); ?>
