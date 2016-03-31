@@ -1,6 +1,7 @@
 .home__block {
   display: block;
   width: 100%;
+  overflow: hidden;
 }
 
 .video-wrapper {
@@ -12,13 +13,26 @@
   display: block;
   
   &__title {
+    transition: opacity 2s ease-in-out;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-left: -280px;
-    margin-top: -74px;
+    margin-top: -67px;
+    width: 560px;
+    height: 134px;
     color: $white;
     text-align: center;
+    opacity: 0;
+    
+    &.-is-visible {
+      opacity: 1;
+    }
+    
+    &.-is-done-fading {
+      transition-duration: .1s;
+    }
+    
   }
   
   &__h3 {
@@ -48,5 +62,62 @@
 
 .home__block img {
   display: block;
-  width: 100%;
+}
+
+@media screen and (max-width: $mobileLandscape) {
+  .header--home,
+  .contact,
+  .contact__button {
+    transition: top .3s ease-in-out;
+  }
+  
+  .body--home {
+    .content-area {
+      margin-top: 0;
+    }
+    
+    &:not(.-is-scrolled) {
+      .header--home {
+        top: -104px;
+      }
+      
+      .contact {
+        top: -404px;
+      }
+      
+      .contact__button {
+        top: -40px;
+      }
+    }
+  } 
+
+  .video-wrapper {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .video {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    &__title {
+      width: 100%;
+      left: auto;
+      margin: -45px auto 0;
+      height: 90px;
+    }
+    
+    &__logo {
+      width: 80%;
+      margin: 0 auto;
+    }
+    
+    &__h3 {
+      font-size: 15px;
+    }
+  }
 }

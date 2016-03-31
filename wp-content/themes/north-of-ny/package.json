@@ -27,6 +27,7 @@
     "babel-core": "^6.7.4",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.7.4",
+    "lodash.throttle": "^4.0.1",
     "reduce-function-call": "^1.0.1",
     "source-map-loader": "^0.1.5",
     "url-loader": "^0.5.7"

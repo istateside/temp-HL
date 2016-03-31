@@ -13,7 +13,7 @@ module.exports = {
     filename: 'dist/application.js',
     publicPath: '/',
   },
-  devTool: 'eval',
+  devTool: 'source-map',
   module: {
     preLoaders: [
       {

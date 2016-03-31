@@ -1,44 +1,8 @@
 @import '_variables';
+@import '_fonts';
 @import 'reset';
 @import 'header';
 @import 'home';
-
-@font-face {
-  font-family: $verlag;
-  src: url("../fonts/Verlag.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: $verlag;
-  font-weight: bold;
-  src: url('../fonts/Verlag-Black.eot');
-  src: url("../fonts/Verlag-Black.eot#iefix") format("embedded-opentype"),
-       url("../fonts/Verlag-Black.woff2") format("woff2"),
-       url("../fonts/Verlag-Black.woff") format("woff"),
-       url("../fonts/Verlag-Black.ttf") format("truetype"),
-       url("../fonts/Verlag-Black.svg") format("svg");
-}
-
-@font-face {
-  font-family: $chronicle;
-  src: url('../fonts/Chronicle.eot');
-  src: url("../fonts/Chronicle.eot#iefix") format("embedded-opentype"),
-       url("../fonts/Chronicle.woff2") format("woff2"),
-       url("../fonts/Chronicle.woff") format("woff"),
-       url("../fonts/Chronicle.ttf") format("truetype"),
-       url("../fonts/Chronicle.svg") format("svg");
-}
-
-@font-face {
-  font-family: $chronicle;
-  font-style: italic;
-  src: url('../fonts/Chronicle-Italic.eot');
-  src: url("../fonts/Chronicle-Italic.eot#iefix") format("embedded-opentype"),
-       url("../fonts/Chronicle-Italic.woff2") format("woff2"),
-       url("../fonts/Chronicle-Italic.woff") format("woff"),
-       url("../fonts/Chronicle-Italic.ttf") format("truetype"),
-       url("../fonts/Chronicle-Italic.svg") format("svg");
-}
 
 * {
   box-sizing: border-box;
@@ -69,6 +33,10 @@ a {
   @media screen and (max-width: $tabletLandscape) {
     margin-top: 64px;
   }
+  
+  @media screen and (max-width: $mobileLandscape) {
+    margin-top: 104px;
+  }
 }
 
 .-min-size-tablet {
@@ -79,6 +47,18 @@ a {
 
 .-max-size-tablet {
   @media screen and (min-width: $tabletLandscape + 1) {
+    display: none;
+  }
+}
+
+.-min-size-mobile {
+  @media screen and (max-width: $mobileLandscape) {
+    display: none;
+  }
+}
+
+.-max-size-mobile {
+  @media screen and (min-width: $mobileLandscape + 1) {
     display: none;
   }
 }

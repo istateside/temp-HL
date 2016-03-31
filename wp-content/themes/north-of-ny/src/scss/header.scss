@@ -81,7 +81,21 @@
   
   &__link {
     line-height: inherit;
-    margin: auto;    
+    margin: auto;
+  }
+  
+  &__icon {
+    font-size: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    
+    &--logo {
+      color: $green;
+    }
+    
+    &--photo {
+      margin-left: 18px;
+    }
   }
 }
 
@@ -90,7 +104,7 @@
     z-index: $headerZ;
   }
   
-  .hamburger {
+  .hamburger { // Animation styles taken from https://github.com/jonsuh/hamburgers under MIT License
     background: $white;
     position: absolute;
     width: 65px;
@@ -124,26 +138,12 @@
 
       &::before {
         top: -9px;
-      }
-
-      &::after {
-        bottom: -9px;
-      }
-      
-      
-      
-      
-      &:before,
-      &:after {
-        content: "";
-      }
-
-      &::before {
         transition: top 0.1s 0.14s ease,
                     opacity 0.1s ease;
       }
 
       &::after {
+        bottom: -9px;
         transition: bottom 0.1s 0.14s ease,
                     transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
       }
@@ -296,7 +296,21 @@
   &__cta {
     color: $gray;
     font: italic 15px $chronicle;
-    margin: 10px auto;
+    margin: 20px auto 10px;
+  }
+  
+  &__link,
+  &__icon {
+    display: block;
+  }
+  
+  &__icon {
+    color: $green;
+    font-size: 12px;
+  }
+  
+  &__link {
+    margin-top: 16px;
   }
   
   @media (max-width: $mobileLandscape) {
@@ -305,7 +319,7 @@
     width: 100%;
     right: auto;
     left: 0;
-    top: -200px;
+    top: -300px;
     
     &.-is-visible {
       top: 100px;
@@ -317,6 +331,19 @@
       left: 0;
       transform: none;
       top: 64px;
+      
+      &__arrow {
+        display: inline-block;
+        line-height: 12px;
+        font-size: 8px;
+        margin-left: 8px;
+        
+        @at-root {
+          .contact.-is-visible & {
+            transform: rotate(180deg) translateY(1px);
+          }
+        }
+      }
     }
   }
 }

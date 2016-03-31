@@ -1,0 +1,117 @@
+@font-face {
+  font-family: $verlag;
+  src: url("../fonts/Verlag.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $verlag;
+  font-weight: bold;
+  src: url('../fonts/Verlag-Black.eot') format("embedded-opentype");
+  src: url("../fonts/Verlag-Black.eot#iefix") format("embedded-opentype"),
+       url("../fonts/Verlag-Black.woff2") format("woff2"),
+       url("../fonts/Verlag-Black.woff") format("woff"),
+       url("../fonts/Verlag-Black.ttf") format("truetype"),
+       url("../fonts/Verlag-Black.svg") format("svg");
+}
+
+@font-face {
+  font-family: $chronicle;
+  src: url('../fonts/Chronicle.eot') format("embedded-opentype");
+  src: url("../fonts/Chronicle.eot#iefix") format("embedded-opentype"),
+       url("../fonts/Chronicle.woff2") format("woff2"),
+       url("../fonts/Chronicle.woff") format("woff"),
+       url("../fonts/Chronicle.ttf") format("truetype"),
+       url("../fonts/Chronicle.svg") format("svg");
+}
+
+@font-face {
+  font-family: $chronicle;
+  font-style: italic;
+  src: url('../fonts/Chronicle-Italic.eot') format("embedded-opentype");
+  src: url("../fonts/Chronicle-Italic.eot#iefix") format("embedded-opentype"),
+       url("../fonts/Chronicle-Italic.woff2") format("woff2"),
+       url("../fonts/Chronicle-Italic.woff") format("woff"),
+       url("../fonts/Chronicle-Italic.ttf") format("truetype"),
+       url("../fonts/Chronicle-Italic.svg") format("svg");
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot') format("embedded-opentype");
+  src: url('../fonts/icomoon.eot#iefix') format('embedded-opentype'),
+       url('../fonts/icomoon.ttf') format('truetype'),
+       url('../fonts/icomoon.woff') format('woff'),
+       url('../fonts/icomoon.svg#icomoon') format('svg');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-horse:before {
+    content: "\e908";
+}
+.icon-arrow_getintouch:before {
+    content: "\e903";
+}
+.icon-arrowdown:before {
+    content: "\e900";
+}
+.icon-full-logo:before {
+    content: "\e901";
+}
+.icon-small-logo:before {
+    content: "\e902";
+}
+.icon-HL_Logo_3_mobile:before {
+    content: "\e911";
+}
+.icon-map:before {
+    content: "\e904";
+}
+.icon-photo:before {
+    content: "\e905";
+}
+.icon-mail:before {
+    content: "\e906";
+}
+.icon-phone:before {
+    content: "\e907";
+}
+.icon-map-bubble:before {
+    content: "\e909";
+}
+.icon-map-cafe:before {
+    content: "\e90a";
+}
+.icon-map-attraction:before {
+    content: "\e90b";
+}
+.icon-map-bar:before {
+    content: "\e90c";
+}
+.icon-map-farm:before {
+    content: "\e90d";
+}
+.icon-map-park:before {
+    content: "\e90e";
+}
+.icon-map-shopping:before {
+    content: "\e90f";
+}
+.icon-map-trail:before {
+    content: "\e910";
+}

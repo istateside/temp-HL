@@ -11,15 +11,18 @@
     <?php wp_head(); ?>
 
   </head>
-  <body>
-    <?php $headerClass = is_front_page() || is_home() ? 'header--home' : NULL; ?>
+  <?php 
+  $bodyClass = is_front_page() || is_home() ? "body--home" : NULL;
+  $headerClass = is_front_page() || is_home() ? 'header--home' : NULL; 
+  ?>
+  <body class="<?php echo $bodyClass ?>">
     <header class="header header--main js-header <?php echo $headerClass ?>" id='main-header'>
       <button class='header__hamburger hamburger js-header-toggle -max-size-tablet' type='button' aria-label='Menu' aria-controls='navigation'>
         <span class='hamburger__inner'></span>
       </button>
       <div class="header__inner-wrap">
         <div class='header__nav header__nav--left header__nav--logo'>
-          <a href="/">NORTH OF NY</a>
+          <a class="nav__link" href="/"><i class="nav__icon nav__icon--logo icon-small-logo"></i></a>
         </div>
         
         <nav class='header__nav header__nav--center header__nav--main mobile-nav'>
@@ -44,16 +47,24 @@
             </li>
           </ul>
           <ul class="-max-size-tablet nav__list nav__list--secondary">
-            <li class="nav__li nav__li--secondary"><a class="nav__link nav__link--secondary" href="/">MAP</a></li>
-            <li class="nav__li nav__li--secondary"><a class="nav__link nav__link--secondary" href="/">PHOTOS</a></li>
+            <li class="nav__li nav__li--secondary"><a class="nav__link nav__link--secondary" href="/">
+              <i class="nav__icon nav__icon--map icon-map"></i><span>The Map</span>
+            </a></li>
+            <li class="nav__li nav__li--secondary"><a class="nav__link nav__link--secondary" href="/">
+              <i class="nav__icon nav__icon--photo icon-photo"></i><span>#NorthOfNYC</span>
+            </a></li>
           </ul>
         </nav>
         
         <div class='header__nav header__nav--right'>
-          <a href="/">MAP</a><a href="/">PHOTOS</a>
+          <a class="nav__link nav__link--secondary" href="/">
+            <i class="nav__icon nav__icon--map icon-map"></i>
+          </a><a class="nav__link nav__link--secondary" href="/">
+            <i class="nav__icon nav__icon--photo icon-photo"></i>
+          </a>
         </div>
       </div>
       <div class="header__underlay -max-size-tablet js-header-toggle"></div>
     </header>
     
-    <?php get_template_part('partial', 'contact'); ?>
+    <?php get_template_part('partials/partial', 'contact'); ?>
