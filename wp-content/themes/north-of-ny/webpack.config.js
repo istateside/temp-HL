@@ -4,13 +4,13 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/dev-server',
     './src/entry.js',
+    // 'webpack-dev-server/client?http://localhost:8080', NOTE: Uncomment these two lines for Webpack Dev Server use
+    // 'webpack/hot/dev-server',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'dist/application.js',
+    filename: 'application.js',
     publicPath: '/',
   },
   devTool: 'source-map',
